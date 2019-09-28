@@ -1,0 +1,27 @@
+:root {
+    height: 100%;
+    width: 100%;
+    background-color: #111;
+}
+
+body {
+    margin: auto;
+    height: 90%;
+    width: 90%;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.container > p {
+    text-align: center;
+    color: #aaa;
+    font-size: 25px;
+    min-height: 35px;
+}
+
+.container > #answer {
+    border: 2px #aaa solid;
+}

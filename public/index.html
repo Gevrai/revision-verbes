@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Étude verbes</title>
+</head>
+<body>
+    <div class="container">
+
+        <p id="verb-infinitif"></p>
+        <p id="verb-personne"></p>
+        <p id="verb-temps"></p>
+
+        <p id="answer"></p>
+
+    </div>
+
+    <script>
+
+        var el_inf = document.getElementById('verb-infinitif')
+        var el_pers = document.getElementById('verb-personne')
+        var el_tps = document.getElementById('verb-temps')
+        var el_ans = document.getElementById('answer')
+
+        var isShowing = false;
+        var answer = ""
+
+        function fetchNewVerb() {
+            fetch('/random')
+            .then( resp => resp.json() )
+            .then( json => {
+                el_inf.textContent = json.inf
+                el_pers.textContent = json.pers
+                el_tps.textContent = json.temps
+                el_ans.textContent = ""
+
+                isShowing = false;
+                answer = json.conj
+            })
+            .catch( err => console.log(err))
+        }
+
+        el_ans.addEventListener('click', () => {
+            if (isShowing) {
+                fetchNewVerb()
+            } else {
+                el_ans.textContent = answer
+                isShowing = true;
+            }
+        })
+
+        fetchNewVerb()
+
+    </script>
+</body>
+</html>
