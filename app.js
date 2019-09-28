@@ -41,13 +41,16 @@ app.get('/random', (req, res) => {
     }
 
     var pers = randomInt(0,5)
-    pers_str = ["je", "tu", "il", "nous", "vous", "ils"][pers]
+    pers_str = ["je ", "tu ", "il ", "nous ", "vous ", "ils "][pers]
+    if (pers == 0 && ['a','e','i','o','u','y'].includes(conj[0])) {
+        pers_str = "j'"
+    }
 
     let json_resp = {
         "temps" : temps,
         "pers": `P${pers + 1}`,
         "inf": verb.infinitif.présent[0],
-        "conj": `${pers_str} ${conj[pers]}`
+        "conj": `${pers_str}${conj[pers]}`
     }
 
     res.json(json_resp)
