@@ -61,4 +61,4 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 var PORT = process.env.PORT || 8000
-var server = app.listen(8000)
+var server = app.listen(PORT)
