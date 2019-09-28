@@ -4,8 +4,8 @@ var fs = require('fs')
 
 var app = express()
 
-function random(min, max) {
-    return Math.floor(Math.random()*(max-min-1)) + min
+function randomInt(min, max) {
+    return Math.floor(Math.random()*(max-min+1)) + min
 }
 
 let data = fs.readFileSync(path.join(__dirname, "verbs", "verbes_lowercase.json"))
@@ -13,11 +13,11 @@ let verbs = JSON.parse(data)
 
 // Randomizer
 app.get('/random', (req, res) => {
-    let verb = verbs[random(0, verbs.length)]
+    let verb = verbs[randomInt(0, verbs.length)]
 
     let temps, conj
 
-    switch (random(0,4)) {
+    switch (randomInt(0,4)) {
         case 0:
             temps = "Présent"
             conj = verb.indicatif.présent
@@ -40,7 +40,7 @@ app.get('/random', (req, res) => {
             break;
     }
 
-    var pers = random(0,5)
+    var pers = randomInt(0,5)
     pers_str = ["je", "tu", "il", "nous", "vous", "ils"][pers]
 
     let json_resp = {
