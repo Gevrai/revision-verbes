@@ -42,7 +42,7 @@ app.get('/random', (req, res) => {
 
     var pers = randomInt(0,5)
     pers_str = ["je ", "tu ", "il ", "nous ", "vous ", "ils "][pers]
-    if (pers == 0 && ['a','e','i','o','u','y'].includes(conj[0])) {
+    if (pers == 0 && "aeiouyéàèùâêîôû".includes(conj[0])) {
         pers_str = "j'"
     }
 
