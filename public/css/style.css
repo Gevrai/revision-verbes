@@ -13,15 +13,18 @@ body {
 .container {
     height: 100%;
     width: 100%;
+    padding-top: 25px;
 }
 
 .container > p {
     text-align: center;
     color: #aaa;
     font-size: 25px;
-    min-height: 35px;
+    min-height: 30px;
 }
 
 .container > #answer {
     border: 2px #aaa solid;
+    min-height: 45px;
+    line-height: 45px;
 }
