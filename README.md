@@ -3,7 +3,7 @@ Simple web app pour réviser les conjugaisons de verbes à la manière de flash 
 
 Utilise l'API de [verbe.cc](http://verbe.cc) pour la recherche des conjugaisons. Voir [bretttolbert/verbecc-svc](https://github.com/bretttolbert/verbecc-svc) pour plus d'informations.
 
-Déployé sur heroku à [verbes.herokuapp.com](verbes.herokuapp.com)
+Déployé sur heroku à [verbes.herokuapp.com](https://verbes.herokuapp.com/)
 
 # Version locale
 
